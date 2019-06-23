@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Nexgento_Customerspecific::parent" title="Customerspecific" module="Nexgento_Customerspecific" sortOrder="100" resource="Nexgento_Customerspecific::parent"/>
+		<add id="Nexgento_Customerspecific::customerspecific" title="Customerspecific Customerspecific" module="Nexgento_Customerspecific" sortOrder="20" parent="Nexgento_Customerspecific::parent" action="customerspecific/customerspecific" resource="Nexgento_Customerspecific::customerspecific"/>
+
+    </menu>
+</config>

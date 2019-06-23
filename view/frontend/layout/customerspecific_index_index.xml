@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+	<head>
+        <title>Customer Product</title>
+    </head> 
+
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Nexgento\Customerspecific\Block\Index\Index" name="customerspecific_index_index" template="Nexgento_Customerspecific::customerspecific_index_index.phtml"/>
+        </referenceContainer>
+
+
+    </body>
+</page>

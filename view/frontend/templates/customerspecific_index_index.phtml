@@ -1,0 +1,32 @@
+<div class="filters">
+	<form action="" method="post">
+	    <input name="sku" type="text" placeholder="Search by SKU" value="<?php echo $this->getRequest()->getPost('sku'); ?>">
+	    <input type="submit" value="Filter">
+	</form>
+	
+</div>
+
+<?php $gridrecords = $block->getCustomCollection(); ?>
+<?php if ($gridrecords && count($gridrecords)): ?>
+		<table>
+            <tr style="background-color: #f4f4f4;">
+                <th scope="col" class="col id"><?php echo __('ID') ?></th>
+                <th scope="col" class="col sku"><?php echo __('SKU') ?></th>
+                <th scope="col" class="col product"><?php echo __('Product Name') ?></th>
+            </tr>
+            <?php foreach ($gridrecords as $gridrecord){ 
+				$product = $block->getProduct($gridrecord->getId());
+				?>
+                <tr>
+                    <td><?php echo $gridrecord->getId() ?></td>
+                    <td><?php echo $product->getSku(); ?></td>
+                    <td><?php echo $product->getName(); ?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    <?php if ($block->getPagerHtml()): ?>
+        <?php echo $block->getPagerHtml(); ?>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('No any record.'); ?></span></div>
+<?php endif ?>
